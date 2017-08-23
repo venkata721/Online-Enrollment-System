@@ -1,0 +1,99 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AdminMaster.master.cs" Inherits="OnlineEnrollmentSystem.Admin.AdminMaster" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <meta charset="utf-8">
+    <title>Online Enrollment System</title>
+    <link href="../css/bootstrap.css" rel="stylesheet">
+    <link href="../css/styles.css" rel="stylesheet">
+    <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+               <a class="navbar-brand" href="../home.aspx"><img src="../images/ucmo.jpg" height="30px" /></a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+               <%--<ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="../home.aspx">Home</a>
+                    </li>
+                    <li>
+                        <a href="../services.aspx">Services</a>
+                    </li>
+                    <li>
+                        <a href="../login.aspx">Login</a>
+                    </li>
+                    <li>
+                        <a href="../contact.aspx">Contact</a>
+                    </li>
+                </ul>--%>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">
+                    <small>
+                    <asp:Label ID="userLabel" runat="server" Text=""></asp:Label></small>
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href="CourseList.aspx">Admin Home</a>
+                    </li>
+                    <li class="active">
+                        <asp:Label ID="lblMenuItem" runat="server"></asp:Label>  
+                    </li>
+                </ol>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="list-group">
+                    <a href="CourseAddEdit.aspx" class="list-group-item">Add Courses</a>
+                    <a href="FacultyAddEdit.aspx" class="list-group-item">Add Faculty</a>
+                    <a href="StudentAddEdit.aspx" class="list-group-item">Add Student</a>
+                    <a href="CourseList.aspx" class="list-group-item">Course List</a>
+                    <a href="FacultyList.aspx" class="list-group-item">Faculty List</a>
+                    <a href="StudentsList.aspx" class="list-group-item">Student list</a>
+                    <a href="ContactsList.aspx" class="list-group-item">Contact List</a>  
+                    <a href="CourseFacultyEnrollment.aspx" class="list-group-item">Faculty Enrollment</a>  
+                    <a href="FacltyStudentEnroll.aspx" class="list-group-item">Student Enrollment</a>  
+                                      
+                    <a href="../signout.aspx" class="list-group-item">Sign Out</a>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <form id="form1" runat="server">
+                    <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                    </asp:ContentPlaceHolder>
+                </form>
+            </div>
+        </div>         
+    </div>
+    <div>
+        <footer>
+            <div class="row" style="background-color: black;color: wheat;text-align: right;">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; 2017 Online Enrollment System</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <%--<script src="../js/jquery.js"></script>--%>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+     
+</body>
+</html>

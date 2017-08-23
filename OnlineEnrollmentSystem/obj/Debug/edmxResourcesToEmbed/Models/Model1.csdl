@@ -1,0 +1,272 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ONLINEENROLLMENTModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CourseFacultyEnrollTransaction">
+    <Key>
+      <PropertyRef Name="CF_ID" />
+    </Key>
+    <Property Name="CF_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CF_FACULTY_ID" Type="Int32" Nullable="false" />
+    <Property Name="CF_COURSE_ID" Type="Int32" Nullable="false" />
+    <Property Name="CF_ENROLLDATE" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="CF_ENROLLBY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CF_DESCRIPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CF_AYN" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CDATE" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+    <Property Name="CUSER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MDATE" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+    <Property Name="MUSER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CF_FACULTY_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CF_COURSE_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="CourseMaster" Relationship="Self.FK__CourseFac__CF_CO__1A14E395" FromRole="CourseFacultyEnrollTransaction" ToRole="CourseMaster" />
+    <NavigationProperty Name="FacultyMaster" Relationship="Self.FK__CourseFac__CF_FA__1B0907CE" FromRole="CourseFacultyEnrollTransaction" ToRole="FacultyMaster" />
+  </EntityType>
+  <EntityType Name="CourseMaster">
+    <Key>
+      <PropertyRef Name="C_ID" />
+    </Key>
+    <Property Name="C_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="C_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="C_DESCRIPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="C_STARTDATE" Type="DateTime" Precision="0" />
+    <Property Name="C_ENDDATE" Type="DateTime" Precision="0" />
+    <Property Name="C_FEE" Type="Int32" />
+    <Property Name="C_DURATION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="C_AYN" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CDATE" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+    <Property Name="CUSER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MDATE" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+    <Property Name="MUSER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="CourseFacultyEnrollTransactions" Relationship="Self.FK__CourseFac__CF_CO__1A14E395" FromRole="CourseMaster" ToRole="CourseFacultyEnrollTransaction" />
+    <NavigationProperty Name="StudentEnrollCourseTrans" Relationship="Self.FK__StudentEn__SEC_C__1DE57479" FromRole="CourseMaster" ToRole="StudentEnrollCourseTrans" />
+  </EntityType>
+  <EntityType Name="FacultyMaster">
+    <Key>
+      <PropertyRef Name="F_ID" />
+    </Key>
+    <Property Name="F_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="F_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="F_USERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="F_PWD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="F_DESCRIPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="F_EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="F_PHNUM" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="F_ADDRESS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="F_AYN" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CDATE" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+    <Property Name="CUSER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MDATE" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+    <Property Name="MUSER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="CourseFacultyEnrollTransactions" Relationship="Self.FK__CourseFac__CF_FA__1B0907CE" FromRole="FacultyMaster" ToRole="CourseFacultyEnrollTransaction" />
+    <NavigationProperty Name="FacultyStudentEnrollTransactions" Relationship="Self.FK__FacultySt__FS_FA__1BFD2C07" FromRole="FacultyMaster" ToRole="FacultyStudentEnrollTransaction" />
+  </EntityType>
+  <EntityType Name="FacultyStudentEnrollTransaction">
+    <Key>
+      <PropertyRef Name="FS_ID" />
+    </Key>
+    <Property Name="FS_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FS_FACULTY_ID" Type="Int32" Nullable="false" />
+    <Property Name="FS_STUDENT_ID" Type="Int32" Nullable="false" />
+    <Property Name="FS_ENROLLDATE" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="FS_ENROLLBY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FS_DESCRIPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FS_AYN" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CDATE" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+    <Property Name="CUSER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MDATE" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+    <Property Name="MUSER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FS_STUDENT_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FS_FACULTY_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="FacultyMaster" Relationship="Self.FK__FacultySt__FS_FA__1BFD2C07" FromRole="FacultyStudentEnrollTransaction" ToRole="FacultyMaster" />
+    <NavigationProperty Name="StudentMaster" Relationship="Self.FK__FacultySt__FS_ST__1CF15040" FromRole="FacultyStudentEnrollTransaction" ToRole="StudentMaster" />
+  </EntityType>
+  <EntityType Name="StudentEnrollCourseTran">
+    <Key>
+      <PropertyRef Name="SEC_ID" />
+    </Key>
+    <Property Name="SEC_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SEC_STUDENT_ID" Type="Int32" Nullable="false" />
+    <Property Name="SEC_STUDENT_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SEC_COURSE_ID" Type="Int32" Nullable="false" />
+    <Property Name="SEC_COURSE_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SEC_COURSE_PRICE" Type="Int32" />
+    <Property Name="SEC_ENROLLDATE" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="SEC_ENROLLBY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SEC_DESCRIPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SEC_AYN" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CDATE" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+    <Property Name="CUSER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MDATE" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+    <Property Name="MUSER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="CourseMaster" Relationship="Self.FK__StudentEn__SEC_C__1DE57479" FromRole="StudentEnrollCourseTrans" ToRole="CourseMaster" />
+    <NavigationProperty Name="StudentMaster" Relationship="Self.FK__StudentEn__SEC_S__1ED998B2" FromRole="StudentEnrollCourseTrans" ToRole="StudentMaster" />
+  </EntityType>
+  <EntityType Name="StudentMaster">
+    <Key>
+      <PropertyRef Name="S_ID" />
+    </Key>
+    <Property Name="S_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="S_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="S_USERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="S_PWD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="S_DESCRIPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="S_EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="S_QUALIFICATION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="S_PHNUM" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="S_ADDRESS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="S_AYN" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CDATE" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+    <Property Name="CUSER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MDATE" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+    <Property Name="MUSER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="FacultyStudentEnrollTransactions" Relationship="Self.FK__FacultySt__FS_ST__1CF15040" FromRole="StudentMaster" ToRole="FacultyStudentEnrollTransaction" />
+    <NavigationProperty Name="StudentEnrollCourseTrans" Relationship="Self.FK__StudentEn__SEC_S__1ED998B2" FromRole="StudentMaster" ToRole="StudentEnrollCourseTrans" />
+  </EntityType>
+  <Association Name="FK__CourseFac__CF_CO__1A14E395">
+    <End Role="CourseMaster" Type="Self.CourseMaster" Multiplicity="1" />
+    <End Role="CourseFacultyEnrollTransaction" Type="Self.CourseFacultyEnrollTransaction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CourseMaster">
+        <PropertyRef Name="C_ID" />
+      </Principal>
+      <Dependent Role="CourseFacultyEnrollTransaction">
+        <PropertyRef Name="CF_COURSE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CourseFac__CF_FA__1B0907CE">
+    <End Role="FacultyMaster" Type="Self.FacultyMaster" Multiplicity="1" />
+    <End Role="CourseFacultyEnrollTransaction" Type="Self.CourseFacultyEnrollTransaction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FacultyMaster">
+        <PropertyRef Name="F_ID" />
+      </Principal>
+      <Dependent Role="CourseFacultyEnrollTransaction">
+        <PropertyRef Name="CF_FACULTY_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__StudentEn__SEC_C__1DE57479">
+    <End Role="CourseMaster" Type="Self.CourseMaster" Multiplicity="1" />
+    <End Role="StudentEnrollCourseTrans" Type="Self.StudentEnrollCourseTran" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CourseMaster">
+        <PropertyRef Name="C_ID" />
+      </Principal>
+      <Dependent Role="StudentEnrollCourseTrans">
+        <PropertyRef Name="SEC_COURSE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__FacultySt__FS_FA__1BFD2C07">
+    <End Role="FacultyMaster" Type="Self.FacultyMaster" Multiplicity="1" />
+    <End Role="FacultyStudentEnrollTransaction" Type="Self.FacultyStudentEnrollTransaction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FacultyMaster">
+        <PropertyRef Name="F_ID" />
+      </Principal>
+      <Dependent Role="FacultyStudentEnrollTransaction">
+        <PropertyRef Name="FS_FACULTY_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__FacultySt__FS_ST__1CF15040">
+    <End Role="StudentMaster" Type="Self.StudentMaster" Multiplicity="1" />
+    <End Role="FacultyStudentEnrollTransaction" Type="Self.FacultyStudentEnrollTransaction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StudentMaster">
+        <PropertyRef Name="S_ID" />
+      </Principal>
+      <Dependent Role="FacultyStudentEnrollTransaction">
+        <PropertyRef Name="FS_STUDENT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__StudentEn__SEC_S__1ED998B2">
+    <End Role="StudentMaster" Type="Self.StudentMaster" Multiplicity="1" />
+    <End Role="StudentEnrollCourseTrans" Type="Self.StudentEnrollCourseTran" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StudentMaster">
+        <PropertyRef Name="S_ID" />
+      </Principal>
+      <Dependent Role="StudentEnrollCourseTrans">
+        <PropertyRef Name="SEC_STUDENT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ONLINEENROLLMENTEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CourseFacultyEnrollTransactions" EntityType="Self.CourseFacultyEnrollTransaction" />
+    <EntitySet Name="CourseMasters" EntityType="Self.CourseMaster" />
+    <EntitySet Name="FacultyMasters" EntityType="Self.FacultyMaster" />
+    <EntitySet Name="FacultyStudentEnrollTransactions" EntityType="Self.FacultyStudentEnrollTransaction" />
+    <EntitySet Name="StudentEnrollCourseTrans" EntityType="Self.StudentEnrollCourseTran" />
+    <EntitySet Name="StudentMasters" EntityType="Self.StudentMaster" />
+    <AssociationSet Name="FK__CourseFac__CF_CO__1A14E395" Association="Self.FK__CourseFac__CF_CO__1A14E395">
+      <End Role="CourseMaster" EntitySet="CourseMasters" />
+      <End Role="CourseFacultyEnrollTransaction" EntitySet="CourseFacultyEnrollTransactions" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CourseFac__CF_FA__1B0907CE" Association="Self.FK__CourseFac__CF_FA__1B0907CE">
+      <End Role="FacultyMaster" EntitySet="FacultyMasters" />
+      <End Role="CourseFacultyEnrollTransaction" EntitySet="CourseFacultyEnrollTransactions" />
+    </AssociationSet>
+    <AssociationSet Name="FK__StudentEn__SEC_C__1DE57479" Association="Self.FK__StudentEn__SEC_C__1DE57479">
+      <End Role="CourseMaster" EntitySet="CourseMasters" />
+      <End Role="StudentEnrollCourseTrans" EntitySet="StudentEnrollCourseTrans" />
+    </AssociationSet>
+    <AssociationSet Name="FK__FacultySt__FS_FA__1BFD2C07" Association="Self.FK__FacultySt__FS_FA__1BFD2C07">
+      <End Role="FacultyMaster" EntitySet="FacultyMasters" />
+      <End Role="FacultyStudentEnrollTransaction" EntitySet="FacultyStudentEnrollTransactions" />
+    </AssociationSet>
+    <AssociationSet Name="FK__FacultySt__FS_ST__1CF15040" Association="Self.FK__FacultySt__FS_ST__1CF15040">
+      <End Role="StudentMaster" EntitySet="StudentMasters" />
+      <End Role="FacultyStudentEnrollTransaction" EntitySet="FacultyStudentEnrollTransactions" />
+    </AssociationSet>
+    <AssociationSet Name="FK__StudentEn__SEC_S__1ED998B2" Association="Self.FK__StudentEn__SEC_S__1ED998B2">
+      <End Role="StudentMaster" EntitySet="StudentMasters" />
+      <End Role="StudentEnrollCourseTrans" EntitySet="StudentEnrollCourseTrans" />
+    </AssociationSet>
+    <EntitySet Name="ContactMasters" EntityType="ONLINEENROLLMENTModel.ContactMaster" />
+    <EntitySet Name="Users" EntityType="ONLINEENROLLMENTModel.User" />
+  </EntityContainer>
+  <EntityType Name="ContactMaster">
+    <Key>
+      <PropertyRef Name="CM_ID" />
+    </Key>
+    <Property Name="CM_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CM_FullName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CM_PhoneNumber" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CM_Email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CM_Message" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CM_Discription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CM_AdminMessage" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CM_EmailStatus" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CM_IsActive" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CUSER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CDATE" Type="String" MaxLength="14" FixedLength="true" Unicode="false" />
+    <Property Name="MUSER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MDATE" Type="String" MaxLength="14" FixedLength="true" Unicode="false" />
+    <Property Name="TIMESTAMP" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="PostDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="ReplayDate" Type="DateTime" Nullable="false" Precision="0" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="U_ID" />
+    </Key>
+    <Property Name="U_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="U_USERNAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="U_PASSWORD" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="U_FIRSTNAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="U_LASTNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="U_EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="U_PHNUM" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="U_ADDRESS" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="U_ROLE_ID" Type="Int32" Nullable="false" />
+    <Property Name="U_ROLE_NAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="U_ISACTIVE" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CUSER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CDATE" Type="String" MaxLength="14" FixedLength="true" Unicode="false" />
+    <Property Name="MUSER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MDATE" Type="String" MaxLength="14" FixedLength="true" Unicode="false" />
+    <Property Name="TIMESTAMP" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+</Schema>

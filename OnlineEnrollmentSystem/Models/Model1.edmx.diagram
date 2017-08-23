@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="cd5acaafa5994e90a47d63565c2c5668" Name="Diagram1" ZoomLevel="54">
+        <EntityTypeShape EntityType="ONLINEENROLLMENTModel.CourseFacultyEnrollTransaction" Width="1.5" PointX="6" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ONLINEENROLLMENTModel.CourseMaster" Width="1.5" PointX="3.125" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ONLINEENROLLMENTModel.FacultyMaster" Width="1.5" PointX="0.5" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ONLINEENROLLMENTModel.FacultyStudentEnrollTransaction" Width="1.5" PointX="3.375" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ONLINEENROLLMENTModel.StudentEnrollCourseTran" Width="1.5" PointX="8.125" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ONLINEENROLLMENTModel.StudentMaster" Width="1.5" PointX="1" PointY="5.125" IsExpanded="true" />
+        <AssociationConnector Association="ONLINEENROLLMENTModel.FK__CourseFac__CF_CO__1A14E395" ManuallyRouted="false" />
+        <AssociationConnector Association="ONLINEENROLLMENTModel.FK__CourseFac__CF_FA__1B0907CE" ManuallyRouted="false" />
+        <AssociationConnector Association="ONLINEENROLLMENTModel.FK__StudentEn__SEC_C__1DE57479" ManuallyRouted="false" />
+        <AssociationConnector Association="ONLINEENROLLMENTModel.FK__FacultySt__FS_FA__1BFD2C07" ManuallyRouted="false" />
+        <AssociationConnector Association="ONLINEENROLLMENTModel.FK__FacultySt__FS_ST__1CF15040" ManuallyRouted="false" />
+        <AssociationConnector Association="ONLINEENROLLMENTModel.FK__StudentEn__SEC_S__1ED998B2" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="ONLINEENROLLMENTModel.ContactMaster" Width="1.5" PointX="8.375" PointY="0.625" />
+        <EntityTypeShape EntityType="ONLINEENROLLMENTModel.User" Width="1.5" PointX="5.875" PointY="4.875" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

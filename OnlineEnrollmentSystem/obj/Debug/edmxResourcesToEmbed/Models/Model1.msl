@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ONLINEENROLLMENTModelStoreContainer" CdmEntityContainer="ONLINEENROLLMENTEntities">
+    <EntitySetMapping Name="CourseFacultyEnrollTransactions">
+      <EntityTypeMapping TypeName="ONLINEENROLLMENTModel.CourseFacultyEnrollTransaction">
+        <MappingFragment StoreEntitySet="CourseFacultyEnrollTransaction">
+          <ScalarProperty Name="CF_ID" ColumnName="CF_ID" />
+          <ScalarProperty Name="CF_FACULTY_ID" ColumnName="CF_FACULTY_ID" />
+          <ScalarProperty Name="CF_COURSE_ID" ColumnName="CF_COURSE_ID" />
+          <ScalarProperty Name="CF_ENROLLDATE" ColumnName="CF_ENROLLDATE" />
+          <ScalarProperty Name="CF_ENROLLBY" ColumnName="CF_ENROLLBY" />
+          <ScalarProperty Name="CF_DESCRIPTION" ColumnName="CF_DESCRIPTION" />
+          <ScalarProperty Name="CF_AYN" ColumnName="CF_AYN" />
+          <ScalarProperty Name="CDATE" ColumnName="CDATE" />
+          <ScalarProperty Name="CUSER" ColumnName="CUSER" />
+          <ScalarProperty Name="MDATE" ColumnName="MDATE" />
+          <ScalarProperty Name="MUSER" ColumnName="MUSER" />
+          <ScalarProperty Name="CF_FACULTY_NAME" ColumnName="CF_FACULTY_NAME" />
+          <ScalarProperty Name="CF_COURSE_NAME" ColumnName="CF_COURSE_NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CourseMasters">
+      <EntityTypeMapping TypeName="ONLINEENROLLMENTModel.CourseMaster">
+        <MappingFragment StoreEntitySet="CourseMaster">
+          <ScalarProperty Name="C_ID" ColumnName="C_ID" />
+          <ScalarProperty Name="C_NAME" ColumnName="C_NAME" />
+          <ScalarProperty Name="C_DESCRIPTION" ColumnName="C_DESCRIPTION" />
+          <ScalarProperty Name="C_STARTDATE" ColumnName="C_STARTDATE" />
+          <ScalarProperty Name="C_ENDDATE" ColumnName="C_ENDDATE" />
+          <ScalarProperty Name="C_FEE" ColumnName="C_FEE" />
+          <ScalarProperty Name="C_DURATION" ColumnName="C_DURATION" />
+          <ScalarProperty Name="C_AYN" ColumnName="C_AYN" />
+          <ScalarProperty Name="CDATE" ColumnName="CDATE" />
+          <ScalarProperty Name="CUSER" ColumnName="CUSER" />
+          <ScalarProperty Name="MDATE" ColumnName="MDATE" />
+          <ScalarProperty Name="MUSER" ColumnName="MUSER" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FacultyMasters">
+      <EntityTypeMapping TypeName="ONLINEENROLLMENTModel.FacultyMaster">
+        <MappingFragment StoreEntitySet="FacultyMaster">
+          <ScalarProperty Name="F_ID" ColumnName="F_ID" />
+          <ScalarProperty Name="F_NAME" ColumnName="F_NAME" />
+          <ScalarProperty Name="F_USERNAME" ColumnName="F_USERNAME" />
+          <ScalarProperty Name="F_PWD" ColumnName="F_PWD" />
+          <ScalarProperty Name="F_DESCRIPTION" ColumnName="F_DESCRIPTION" />
+          <ScalarProperty Name="F_EMAIL" ColumnName="F_EMAIL" />
+          <ScalarProperty Name="F_PHNUM" ColumnName="F_PHNUM" />
+          <ScalarProperty Name="F_ADDRESS" ColumnName="F_ADDRESS" />
+          <ScalarProperty Name="F_AYN" ColumnName="F_AYN" />
+          <ScalarProperty Name="CDATE" ColumnName="CDATE" />
+          <ScalarProperty Name="CUSER" ColumnName="CUSER" />
+          <ScalarProperty Name="MDATE" ColumnName="MDATE" />
+          <ScalarProperty Name="MUSER" ColumnName="MUSER" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FacultyStudentEnrollTransactions">
+      <EntityTypeMapping TypeName="ONLINEENROLLMENTModel.FacultyStudentEnrollTransaction">
+        <MappingFragment StoreEntitySet="FacultyStudentEnrollTransaction">
+          <ScalarProperty Name="FS_ID" ColumnName="FS_ID" />
+          <ScalarProperty Name="FS_FACULTY_ID" ColumnName="FS_FACULTY_ID" />
+          <ScalarProperty Name="FS_STUDENT_ID" ColumnName="FS_STUDENT_ID" />
+          <ScalarProperty Name="FS_ENROLLDATE" ColumnName="FS_ENROLLDATE" />
+          <ScalarProperty Name="FS_ENROLLBY" ColumnName="FS_ENROLLBY" />
+          <ScalarProperty Name="FS_DESCRIPTION" ColumnName="FS_DESCRIPTION" />
+          <ScalarProperty Name="FS_AYN" ColumnName="FS_AYN" />
+          <ScalarProperty Name="CDATE" ColumnName="CDATE" />
+          <ScalarProperty Name="CUSER" ColumnName="CUSER" />
+          <ScalarProperty Name="MDATE" ColumnName="MDATE" />
+          <ScalarProperty Name="MUSER" ColumnName="MUSER" />
+          <ScalarProperty Name="FS_STUDENT_NAME" ColumnName="FS_STUDENT_NAME" />
+          <ScalarProperty Name="FS_FACULTY_NAME" ColumnName="FS_FACULTY_NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StudentEnrollCourseTrans">
+      <EntityTypeMapping TypeName="ONLINEENROLLMENTModel.StudentEnrollCourseTran">
+        <MappingFragment StoreEntitySet="StudentEnrollCourseTrans">
+          <ScalarProperty Name="SEC_ID" ColumnName="SEC_ID" />
+          <ScalarProperty Name="SEC_STUDENT_ID" ColumnName="SEC_STUDENT_ID" />
+          <ScalarProperty Name="SEC_STUDENT_NAME" ColumnName="SEC_STUDENT_NAME" />
+          <ScalarProperty Name="SEC_COURSE_ID" ColumnName="SEC_COURSE_ID" />
+          <ScalarProperty Name="SEC_COURSE_NAME" ColumnName="SEC_COURSE_NAME" />
+          <ScalarProperty Name="SEC_COURSE_PRICE" ColumnName="SEC_COURSE_PRICE" />
+          <ScalarProperty Name="SEC_ENROLLDATE" ColumnName="SEC_ENROLLDATE" />
+          <ScalarProperty Name="SEC_ENROLLBY" ColumnName="SEC_ENROLLBY" />
+          <ScalarProperty Name="SEC_DESCRIPTION" ColumnName="SEC_DESCRIPTION" />
+          <ScalarProperty Name="SEC_AYN" ColumnName="SEC_AYN" />
+          <ScalarProperty Name="CDATE" ColumnName="CDATE" />
+          <ScalarProperty Name="CUSER" ColumnName="CUSER" />
+          <ScalarProperty Name="MDATE" ColumnName="MDATE" />
+          <ScalarProperty Name="MUSER" ColumnName="MUSER" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StudentMasters">
+      <EntityTypeMapping TypeName="ONLINEENROLLMENTModel.StudentMaster">
+        <MappingFragment StoreEntitySet="StudentMaster">
+          <ScalarProperty Name="S_ID" ColumnName="S_ID" />
+          <ScalarProperty Name="S_NAME" ColumnName="S_NAME" />
+          <ScalarProperty Name="S_USERNAME" ColumnName="S_USERNAME" />
+          <ScalarProperty Name="S_PWD" ColumnName="S_PWD" />
+          <ScalarProperty Name="S_DESCRIPTION" ColumnName="S_DESCRIPTION" />
+          <ScalarProperty Name="S_EMAIL" ColumnName="S_EMAIL" />
+          <ScalarProperty Name="S_QUALIFICATION" ColumnName="S_QUALIFICATION" />
+          <ScalarProperty Name="S_PHNUM" ColumnName="S_PHNUM" />
+          <ScalarProperty Name="S_ADDRESS" ColumnName="S_ADDRESS" />
+          <ScalarProperty Name="S_AYN" ColumnName="S_AYN" />
+          <ScalarProperty Name="CDATE" ColumnName="CDATE" />
+          <ScalarProperty Name="CUSER" ColumnName="CUSER" />
+          <ScalarProperty Name="MDATE" ColumnName="MDATE" />
+          <ScalarProperty Name="MUSER" ColumnName="MUSER" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ContactMasters">
+      <EntityTypeMapping TypeName="ONLINEENROLLMENTModel.ContactMaster">
+        <MappingFragment StoreEntitySet="ContactMaster">
+          <ScalarProperty Name="ReplayDate" ColumnName="ReplayDate" />
+          <ScalarProperty Name="PostDate" ColumnName="PostDate" />
+          <ScalarProperty Name="TIMESTAMP" ColumnName="TIMESTAMP" />
+          <ScalarProperty Name="MDATE" ColumnName="MDATE" />
+          <ScalarProperty Name="MUSER" ColumnName="MUSER" />
+          <ScalarProperty Name="CDATE" ColumnName="CDATE" />
+          <ScalarProperty Name="CUSER" ColumnName="CUSER" />
+          <ScalarProperty Name="CM_IsActive" ColumnName="CM_IsActive" />
+          <ScalarProperty Name="CM_EmailStatus" ColumnName="CM_EmailStatus" />
+          <ScalarProperty Name="CM_AdminMessage" ColumnName="CM_AdminMessage" />
+          <ScalarProperty Name="CM_Discription" ColumnName="CM_Discription" />
+          <ScalarProperty Name="CM_Message" ColumnName="CM_Message" />
+          <ScalarProperty Name="CM_Email" ColumnName="CM_Email" />
+          <ScalarProperty Name="CM_PhoneNumber" ColumnName="CM_PhoneNumber" />
+          <ScalarProperty Name="CM_FullName" ColumnName="CM_FullName" />
+          <ScalarProperty Name="CM_ID" ColumnName="CM_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="ONLINEENROLLMENTModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="TIMESTAMP" ColumnName="TIMESTAMP" />
+          <ScalarProperty Name="MDATE" ColumnName="MDATE" />
+          <ScalarProperty Name="MUSER" ColumnName="MUSER" />
+          <ScalarProperty Name="CDATE" ColumnName="CDATE" />
+          <ScalarProperty Name="CUSER" ColumnName="CUSER" />
+          <ScalarProperty Name="U_ISACTIVE" ColumnName="U_ISACTIVE" />
+          <ScalarProperty Name="U_ROLE_NAME" ColumnName="U_ROLE_NAME" />
+          <ScalarProperty Name="U_ROLE_ID" ColumnName="U_ROLE_ID" />
+          <ScalarProperty Name="U_ADDRESS" ColumnName="U_ADDRESS" />
+          <ScalarProperty Name="U_PHNUM" ColumnName="U_PHNUM" />
+          <ScalarProperty Name="U_EMAIL" ColumnName="U_EMAIL" />
+          <ScalarProperty Name="U_LASTNAME" ColumnName="U_LASTNAME" />
+          <ScalarProperty Name="U_FIRSTNAME" ColumnName="U_FIRSTNAME" />
+          <ScalarProperty Name="U_PASSWORD" ColumnName="U_PASSWORD" />
+          <ScalarProperty Name="U_USERNAME" ColumnName="U_USERNAME" />
+          <ScalarProperty Name="U_ID" ColumnName="U_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
